@@ -1,3 +1,71 @@
+.form, .sayHello, .js-toDoForm {
+    display: none;
+}
+
+.showing{
+    display: block;
+}
+
+.js-weather, .weather{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+h4{
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.js-form, .form .showing, .js-toDoForm {
+    text-align: center;
+}
+
+/* .js-toDoForm > input {
+    height: 25px;
+} */
+
+form > input {
+    height:25px;
+}
+
+input::placeholder{
+    text-align: center;
+}
+
+.js-toDoList{
+    text-align: center;
+}
+
+ul>li{
+    margin-top:5px;
+}
+
+ul>li>span{
+    margin-right: 10px;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+/* body{
+display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 16px);
+} */
 /* Source: http://tutorialzine.com/2013/06/digital-clock/ */
 
 /*-------------------------
