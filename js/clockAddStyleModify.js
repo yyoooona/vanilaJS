@@ -4,8 +4,8 @@ function clockWork(){
     // Cache some selectors
 
     let clock = document.querySelector('#clock'),
-        alarm = clock.querySelector('.alarm'),
-        ampm = clock.querySelector('.ampm');
+    alarm = clock.querySelector('.alarm'),
+    ampm = clock.querySelector('.ampm');
 
     // Map digits to their names (this will be an array)
     let digit_to_name = 'zero one two three four five six seven eight nine'.split(' ');
@@ -15,7 +15,7 @@ function clockWork(){
 
     // Positions for the hours, minutes, and seconds
     let positions = [
-        'h1', 'h2', ':', 'm1', 'm2', ':', 's1', 's2'
+    'h1', 'h2', ':', 'm1', 'm2', ':', 's1', 's2'
     ];
 
     // Generate the digits with the needed markup,
@@ -54,7 +54,7 @@ function clockWork(){
     // Add the weekday names
 
     let weekday_names = 'MON TUE WED THU FRI SAT SUN'.split(' '),
-        weekday_holder = clock.querySelector('.weekdays');
+    weekday_holder = clock.querySelector('.weekdays');
 
     for (let weekday of weekday_names){
         const weekdayTag = document.createElement('span');
@@ -81,12 +81,14 @@ function clockWork(){
 
         let now = moment().format("hhmmssdA");
 
-        document.querySelector('.h1').classList.add(digit_to_name[now[0]]);
-        document.querySelector('.h2').classList.add(digit_to_name[now[1]]);
-        document.querySelector('.m1').classList.add(digit_to_name[now[2]]);
-        document.querySelector('.m2').classList.add(digit_to_name[now[3]]);
-        document.querySelector('.s1').classList.add(digit_to_name[now[4]]);
-        document.querySelector('.s2').classList.add(digit_to_name[now[5]]);
+        const digitsChild = document.querySelector('.digits').childNodes;
+        let digitsCount = 0;
+
+        for(let i=0; i<digitsChild.length; i++){
+            if(digitsChild[i].getAttribute('class')!=='dots'){
+                digitsChild[i].setAttribute('class', digit_to_name[now[digitsCount++]]);
+            }
+        }        
 
         // The library returns Sunday as the first day of the week.
         // Stupid, I know. Lets shift all the days one position down, 
