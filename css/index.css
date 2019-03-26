@@ -37,6 +37,10 @@ input::placeholder{
     text-align: center;
 }
 
+ul{
+	list-style: none;
+}
+
 ul>li{
     margin-top:5px;
 }
